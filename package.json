@@ -1,0 +1,23 @@
+{
+  "name": "landingpage",
+  "version": "1.0.0",
+  "description": "build sass and js for landingpage based on opencms-html",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Claudia Bastert",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1"
+  },
+  "dependencies": {
+    "gulp-dart-sass": "^1.0.2",
+    "owl.carousel.es6": "^3.0.2"
+  }
+}

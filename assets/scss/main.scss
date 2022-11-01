@@ -1,0 +1,66 @@
+:root {
+    --baseline: 12px;
+}
+
+@import 'generics/functions';
+@import 'generics/variables';
+@import 'generics/mixins';
+
+@import 'generics/extends';
+@import 'base/normalize';
+@import 'base/scaffolding';
+@import 'base/fonts';
+@import 'base/type';
+@import 'base/grid';
+@import 'base/flex';
+@import 'base/nav';
+
+@import 'lib/bootstrap-utilities.scss';
+@import 'lib/bootstrap-grid.scss';
+
+.label {
+    display: flex;
+    align-content: center;
+    gap: 5px
+}
+pre {
+    border: 2px dashed #CCC;
+    background-color: #f1f1f1;
+    @extend .mb-12;
+    overflow: auto;
+}
+.flex-code-box {
+    @media (min-width: 1600px) {
+        display: flex;
+        width: calc(100% + 400px);
+        margin-left: -200px;
+        > div {
+            flex: 1 1 50%;
+        }
+        > pre {
+            flex: 0 0 500px;
+        }
+    }
+}
+.float-outer {
+    bordeR: 2px dashed cornflowerblue;
+    @extend .mt-12;
+    @extend .mb-12;
+    padding: 50px;
+}
+.float-left {
+    float: left;
+    margin: 0 40px 40px 0;
+
+}
+.column-count {
+    column-count: 3;
+    column-gap: 50px;
+    column-rule: 1px dotted cornflowerblue;
+    p {
+        margin: 0 0 20px 0
+    }
+    h1 {
+        column-span: all;
+    }
+}

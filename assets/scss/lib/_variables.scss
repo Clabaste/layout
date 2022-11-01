@@ -1,0 +1,116 @@
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-grid-classes: true !default;
+$enable-negative-margins: false !default;
+$enable-important-utilities: true !default;
+
+// Prefix for :root CSS variables
+$variable-prefix: bs- !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// scss-docs-start spacer-variables-maps
+$spacers-v: (
+  0: 0,
+  1: calc(var(--baseline) * 0.25),
+  2: calc(var(--baseline) * 0.5),
+  3: var(--baseline),
+  4: calc(var(--baseline) * 1.5),
+  5: calc(var(--baseline) * 2),
+  6: calc(var(--baseline) * 2.5),
+  7: calc(var(--baseline) * 3),
+  8: calc(var(--baseline) * 3.5),
+  9: calc(var(--baseline) * 4),
+  10: calc(var(--baseline) * 4.5),
+  11: calc(var(--baseline) * 5),
+  12: calc(var(--baseline) * 5.5)
+) !default;
+
+$spacers-h: (
+  0: 0,
+  1: calc(var(--grid) * 0.25),
+  2: calc(var(--grid) * 0.5),
+  3: var(--grid),
+  4: calc(var(--grid) * 1.5),
+  5: calc(var(--grid) * 2)
+) !default;
+
+$negative-spacers-h: if($enable-negative-margins, negativify-map($spacers-h), null) !default;
+$negative-spacers-v: if($enable-negative-margins, negativify-map($spacers-v), null) !default;
+// scss-docs-end spacer-variables-maps
+
+// Position
+//
+// Define the edge positioning anchors of the position utilities.
+
+// scss-docs-start position-map
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+) !default;
+// scss-docs-end position-map
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+$grid-breakpoints-zurich: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1440px
+) !default;
+
+// scss-docs-end grid-breakpoints
+
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+) !default;
+// scss-docs-end container-max-widths
+
+@include _assert-ascending($container-max-widths, '$container-max-widths');
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12 !default;
+$grid-gutter-width: var(--bs-grid) !default;
+$grid-row-columns: 6 !default;
+
+$gutters: $spacers-h !default;
+
+// Container padding
+
+$container-padding-x: calc(var(--bs-grid) * 0.5) !default;

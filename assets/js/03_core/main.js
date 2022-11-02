@@ -81,24 +81,4 @@ reset.forEach((item) => {
 
 
 
-/*const element = document.querySelector('#images');
-const cursorRounded = document.querySelector('.rounded');
-
-let te
-const moveCursor = (e)=> {
-    const mouseY = e.clientY;
-    const mouseX = e.clientX;
-    cursorRounded.style.visibility = 'visible';
-    cursorRounded.style.top = `${mouseY - 50}px`;
-    cursorRounded.style.left = `${mouseX-50}px`;
-
-    clearTimeout(te)
-
-}
-const removeCursor = (e)=> {
-    cursorRounded.style.visibility = 'hidden';
-}
-element.addEventListener('mousemove', moveCursor)
-element.addEventListener('mouseenter', moveCursor)
-element.addEventListener('mouseleave', removeCursor)*/
 

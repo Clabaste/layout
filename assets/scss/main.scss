@@ -54,7 +54,11 @@ pre {
 
 }
 .column-count {
-    column-count: 3;
+    column-count: 2;
+    @media (min-width: 1024px) {
+        column-count: 3;
+    }
+
     column-gap: 50px;
     column-rule: 1px dotted cornflowerblue;
     p {

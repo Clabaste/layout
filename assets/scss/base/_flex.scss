@@ -102,3 +102,26 @@
 .flex-direction-column {
     flex-direction: column;
 }
+
+
+.flexinputs {
+    flex-direction: column;
+    label {
+        margin-bottom: 6px;
+    }
+    @media (min-width: 600px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        fieldset {
+            flex: 0 0 45%
+        }
+    }
+    @media (min-width: 1024px) {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        fieldset {
+            flex: 1 1 auto
+        }
+    }
+}

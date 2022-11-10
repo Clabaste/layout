@@ -41,3 +41,23 @@ a {
 li {
   margin: 0 0 20px 0
 }
+.top-link {
+  position: fixed;
+  right: 30px;
+  bottom:30px;
+  background-color: cornflowerblue;
+  color: #FFF;
+  border-radius: 50%;
+  width: 40px;
+  height:40px;
+  line-height: 2;
+  text-align: center;
+  &:after {
+    display: none;
+  }
+  &:hover {
+    &:after {
+      display: none;
+    }
+  }
+}

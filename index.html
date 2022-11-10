@@ -7,28 +7,35 @@
     <link rel="stylesheet" href="dist/assets/styles/main.css" media="all">
 </head>
 <body class="" itemtype="http://schema.org/WebPage">
-<div class="container">
+<div class="container" id="toTop">
     <h1>Layouting mit CSS – Flex vs Grid</h1>
-    <p>Das flexible Box-Modul, „Flexbox“ abgekürzt, ist ein eindimensionales Layout-Modell, erzeugt also entweder Zeilen oder Spalten. Mit Flexbox lassen sich Elemente gut in einem Container ausrichten und verteilen.</p>
-    <p>Mit CSS-Grid kann man noch die zweite Dimension ins Layout nehmen und gleichzeitig sowohl Zeilen als auch Spalten erzeugen.</p>
+    <div class="flex">
+        <div class="flexplain">
+          <p>Das flexible Box-Modul, „Flexbox“ abgekürzt, ist ein eindimensionales Layout-Modell, erzeugt also entweder Zeilen oder Spalten.
+              </p><p>Mit Flexbox lassen sich Elemente gut in einem Container ausrichten und verteilen.</p>
+            <p>Flexbox geht von der Größe des Inhalts aus.</p>
+            <p>Die Breite der Kindelemente richtet sich entweder nach deren Inhalt oder nach einer Breitenangabe. </p>
+            <p>Außerdem besteht die Möglichkeit, einzelne oder alle Kindelemente so auszurichten, dass sie immer die gesamte Breite des Elternelementes ausfüllen</p>
+        </div>
+        <div class="gridplain">
+            <p>CSS-Grid arbeitet mit einer Raster-Anordnung, bei der der Bildschirm (unsichtbar) in Spalten und Zeilen unterteilt ist.
+            </p>
+            <p>Mit CSS-Grid kann man die <a href="#secondDimension">zweite Dimension</a> ins Layout nehmen und gleichzeitig sowohl Zeilen als auch Spalten erzeugen.</p>
+            <p>Die Elemente des Containers können so eingestellt werden, dass sie sich überlappen und überlappen.</p>
+            <p>
+                Ein Wert von „1fr“ macht alle Spalten und Zeilen gleich groß und verteilt sie über den zur Verfügung stehenden Platz. Will man eine Spalte doppelt so groß haben wie die anderen, weist man ihr „2fr“ zu.
+            </p>
+            <p>
+                Natürlich können aber auch absolute Einheiten wie Pixel verwendet werden.
+            </p>
+        </div>
+    </div>
 
-    <p>
-        Mittel CSS-Grid kann man ein 2-dimensionales Layout erzeugen, also sowohl Zeilen als auch Spalten des Layouts definieren. </p>
-        <p>CSS-Grid arbeitet mit einer 12-Raster-Anordnung, bei der der Bildschirm (unsichtbar) in 12 Teile unterteilt ist und Elemente in diese Anordnung passen müssen.
-    </p>
-    <p>
-Der Vorteil von CSS Grid gegenüber Flexbox und anderen Layoutmodellen ist seine zweidimensionale Qualität . Es macht auch die Positionierung einfacher, und die Elemente des Containers können so eingestellt werden, dass sie sich überlappen und überlappen.</p><h3>Prinzip Flex</h3>
-    <p>Flexbox geht von der Größe des Inhalts aus.</p>
-    <p>Die Breite der Kindelemente richtet sich entweder nach deren Inhalt oder nach einer Breitenangabe. Alternativ besteht die Möglichkeit, einzelne oder alle Kindelemente so auszurichten, dass sie immer die gesamte Breite des Elternelementes ausfüllen</p>
-    <h3>Prinzip Grid</h3>
-    <p>
-        Ein Wert von „1fr“ macht alle Spalten und Zeilen gleich groß und verteilt sie über den zur Verfügung stehenden Platz. Will man eine Spalte doppelt so groß haben wie die anderen, weist man ihr „2fr“ zu. Natürlich können aber auch absolute Einheiten wie Pixel verwendet werden.
-    </p>
 
     <h2>Überschneidungen?</h2>
 
     <p>Auch wenn "grid" für zweidimensionale Layouts prädestiniert ist, kann man vieles sowohl mit "flex" oder mit "grid" lösen – es ist eben auch ein bisschen Geschmackssache.</p>
-    <p class="pb-12">Generell kann man sagen Flexbox bietet mehr Flexibilität. Grid hilft bei der Erstellung eines kontrollierteren Layouts – hier wird im Elternelement ein Gitter aus Zeilen und Spalten definiert.</p>
+    <p class="pb-12">Generell kann man sagen, dass Flexbox mehr Flexibilität anbietet. Grid hilft bei der Erstellung eines kontrollierteren Layouts – hier wird im Elternelement ein Gitter aus Zeilen und Spalten definiert.</p>
 
     <hr class="mt-12">
 
@@ -475,7 +482,7 @@ Der Vorteil von CSS Grid gegenüber Flexbox und anderen Layoutmodellen ist seine
     <p><strong>Flex</strong> für Content mit wenigen Zeilen und Spalten, die vertikal ausgerichtet werden müssen. Vor allem, wenn man nicht weiss, wieviel Spalten gebraucht werden</p>
 
 
-    <h3 class="mt-12 pt-12">Ein Beispiel für die gleichzeitige Verwendung von Flex und Grid</h3>
+    <h3 class="mt-12 pt-12" id="secondDimension">Ein Beispiel für die gleichzeitige Verwendung von Flex und Grid</h3>
     <section class="grid-tile mb-12">
         <figure class="grid-tile__image">
             <img src="https://placeimg.com/200/200/animals">
@@ -574,7 +581,9 @@ Der Vorteil von CSS Grid gegenüber Flexbox und anderen Layoutmodellen ist seine
         </p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dicta excepturi ipsa. Aut blanditiis doloremque eius fuga natus ratione, vel! Corporis cupiditate dolorum excepturi exercitationem, maxime odit pariatur possimus totam!</p>
     </div>
 </div>
-
+<a href="#toTop" class="top-link">
+    top
+</a>
 <script src="dist/assets/js/main.js"></script>
 </body>
 </html>

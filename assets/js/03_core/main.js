@@ -79,6 +79,15 @@ reset.forEach((item) => {
     })
 })
 
+const flexHeightInput = document.getElementById('flexHeightInput')
+const flexHeightEl = document.getElementById('flexHeight')
+const rangeValue = document.getElementById('rangeValue')
 
+flexHeightEl.style.height = `${flexHeightInput.getAttribute('value')}%`
+rangeValue.innerText = `: ${flexHeightInput.getAttribute('value')}%`
 
+document.getElementById('flexHeightInput').addEventListener('input', (e) => {
+    flexHeightEl.style.height = `${e.target.value}%`
+    rangeValue.innerText =  `: ${e.target.value}%`
+})
 

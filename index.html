@@ -379,6 +379,31 @@
         </div>
 
     </div>
+    <h4>Vertikale Flexbox</h4>
+    <div class="flex">
+        <div class="flex-vertical neutral">
+            <div class="flex-vertical__flexible-height">
+                <div class="arrow">
+
+                </div>
+                Anzeige der Lücke
+            </div>
+            <div class="flex-vertical__height" id="flexHeight">
+                Range Wert <span id="rangeValue"></span>
+            </div>
+        </div>
+        <div class="neutral" style="align-self: end">
+            <label for="flexHeightInput">Höhe der unteren Box</label>
+            <input
+                type="range"
+                value="25"
+                min="10"
+                max="85"
+                id="flexHeightInput"
+            >
+        </div>
+    </div>
+
 
     <h3 class="mt-12 pt-12">Wo punktet Grid?</h3>
     <p>Mit Grid kann ich komplexe Layouts mit wenig Code einfach und gut lesbar definieren:</p>

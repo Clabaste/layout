@@ -88,3 +88,12 @@ reset.forEach(function (item) {
     });
   });
 });
+var flexHeightInput = document.getElementById('flexHeightInput');
+var flexHeightEl = document.getElementById('flexHeight');
+var rangeValue = document.getElementById('rangeValue');
+flexHeightEl.style.height = "".concat(flexHeightInput.getAttribute('value'), "%");
+rangeValue.innerText = ": ".concat(flexHeightInput.getAttribute('value'), "%");
+document.getElementById('flexHeightInput').addEventListener('input', function (e) {
+  flexHeightEl.style.height = "".concat(e.target.value, "%");
+  rangeValue.innerText = ": ".concat(e.target.value, "%");
+});

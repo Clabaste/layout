@@ -6698,45 +6698,121 @@ li {
     display: none !important;
   }
 }
-.grad {
-  width: 100%;
-  overflow: hidden;
-  background: #090979;
-  height: 60vh;
-  position: relative;
-  /*background: rgb(255,255,255);*/
-}
-.grad_1 {
+.grad__trans-1 {
   position: absolute;
-  transform: translate(50%, -50%);
-  animation-duration: 10s;
-  animation-name: grad1;
-  animation-iteration-count: infinite;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(9, 9, 121, 0.5872549703) 70%);
-  opacity: 0;
-  /*transform: translate(-20%, 20%) scale(1.3);
-  opacity: 1;
-  bordeR: 1px dotted red;*/
 }
 
-@keyframes grad1 {
-  25% {
+.grad {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+  /*&__2 {
+    position: absolute;
     opacity: 0.75;
+    box-shadow: 0 0 15vmax 15vmax $shadow;
+    animation: colour-2 15s 0s linear infinite;
   }
-  45% {
-    transform: translate(-20%, 20%) scale(1.3);
+
+  &__1 {
+    position: absolute;
+    opacity: 0.75;
+    box-shadow: 0 0 10vmax 10vmax $shadow;
+    animation: colour-3 20s 0s linear infinite;
+  }*/
+}
+.grad__bg-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000033;
+  /*animation: brightness 10s 0s linear infinite;*/
+}
+.grad__trans-1 {
+  background: #DBE4E0;
+  width: 10%;
+  height: 90%;
+  left: 50%;
+  filter: blur(7vmax);
+  transform: skewX(20deg);
+}
+.grad__3 {
+  /*position: absolute;
+  opacity: 0.75;
+  box-shadow: 0 0 20vmax 20vmax $shadow;
+  animation: colour-1 10s 0s linear infinite;*/
+}
+
+@keyframes brightness {
+  to {
+    filter: brightness(100%);
   }
-  74% {
-    transform: translate(-50%, 100%) scale(1);
-    opacity: 1;
+}
+@keyframes hueRotateMWX {
+  to {
+    filter: hue-rotate(3.142rad);
+  }
+}
+@keyframes hueRotate {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes colour-1 {
+  0% {
+    top: 50%;
+    left: 100%;
+  }
+  25% {
+    top: 100%;
+  }
+  50% {
+    left: 0%;
   }
   75% {
-    opacity: 0.75;
+    top: 0%;
   }
   100% {
-    opacity: 0;
+    top: 50%;
+    left: 100%;
+  }
+}
+@keyframes colour-2 {
+  0% {
+    top: 50%;
+    left: 100%;
+  }
+  25% {
+    top: 100%;
+  }
+  50% {
+    left: 0%;
+  }
+  75% {
+    top: 0%;
+  }
+  100% {
+    top: 50vh;
+    left: 100%;
+  }
+}
+@keyframes colour-3 {
+  0% {
+    top: 100%;
+    left: 50%;
+  }
+  25% {
+    left: 100%;
+  }
+  50% {
+    top: 0%;
+  }
+  75% {
+    left: 0%;
+  }
+  100% {
+    top: 100%;
+    left: 50%;
   }
 }
 .label {

@@ -8,8 +8,9 @@
 .mwx-mesh {
   width: 100%;
   height: 50vh;
-
-  background-color:hsla(217,38%,51%,1);
+/*
+  background-color:hsla(217,38%,51%,1);*/
+  background-image: radial-gradient(#5578B4 100% , transparent 100%);
   position: relative;
   &--single {
 
@@ -21,22 +22,32 @@
     @extend %inner;
     animation: mesh 12s 0s infinite;
     background-image:
+
             radial-gradient(at 0% 0%, hsla(14,66%,63%,1) 0px, transparent 65%),
             radial-gradient(at 0% 200%, hsla(157,38%,51%,1) 0px, transparent 65%),
             radial-gradient(at 200% 100%, hsla(289,70%,51%,1) 0px, transparent 65%);
   }
   &__2 {
     @extend %inner;
-    animation: mesh 12s 4s infinite;
+    animation: mesh 12s 3s infinite;
     background-image:
-            radial-gradient(at 0% 0%, hsla(14,66%,63%,.5) 0px, transparent 65%),
-            radial-gradient(at 0% 100%, hsla(157,38%,51%,1) 0px, transparent 65%),
-            radial-gradient(at 100% 100%, hsla(289,70%,51%,1) 0px, transparent 65%);
-  }
 
+            radial-gradient(at -40% -30%, hsla(289,70%,51%,1) 0px, transparent 65%),
+            radial-gradient(at 0% 100%, hsla(217,38%,51%,1) 0px, transparent 65%),
+            radial-gradient(at 200% 100%, hsla(157,38%,51%,1) 0px, transparent 65%);
+  }
   &__3 {
     @extend %inner;
-    animation: mesh 12s 8s infinite;
+    animation: mesh 12s 6s infinite;
+    background-image:
+            radial-gradient(at 0% 0%, hsla(14,66%,63%,.5) 0px, transparent 65%),
+            radial-gradient(at 0% 130%, hsla(157,38%,51%,1) 0px, transparent 65%),
+            radial-gradient(at 100% 130%, hsla(289,70%,51%,1) 0px, transparent 65%);
+  }
+
+  &__4 {
+    @extend %inner;
+    animation: mesh 12s 9s infinite;
     background-image:
             radial-gradient(at 130% 0%, hsla(359,70%,51%,1) 0px, transparent 65%),
             radial-gradient(at 130% 100%, hsla(289,70%,51%,1) 0px, transparent 65%),

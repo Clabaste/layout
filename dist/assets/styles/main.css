@@ -6915,7 +6915,7 @@ li {
     top: 50%;
   }
 }
-.mwx-mesh__3, .mwx-mesh__2, .mwx-mesh__1 {
+.mwx-mesh__4, .mwx-mesh__3, .mwx-mesh__2, .mwx-mesh__1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -6926,7 +6926,9 @@ li {
 .mwx-mesh {
   width: 100%;
   height: 50vh;
-  background-color: hsl(217deg, 38%, 51%);
+  /*
+    background-color:hsla(217,38%,51%,1);*/
+  background-image: radial-gradient(#5578B4 100%, transparent 100%);
   position: relative;
 }
 .mwx-mesh--single div {
@@ -6937,11 +6939,15 @@ li {
   background-image: radial-gradient(at 0% 0%, hsl(14deg, 66%, 63%) 0px, transparent 65%), radial-gradient(at 0% 200%, hsl(157deg, 38%, 51%) 0px, transparent 65%), radial-gradient(at 200% 100%, hsl(289deg, 70%, 51%) 0px, transparent 65%);
 }
 .mwx-mesh__2 {
-  animation: mesh 12s 4s infinite;
-  background-image: radial-gradient(at 0% 0%, hsla(14deg, 66%, 63%, 0.5) 0px, transparent 65%), radial-gradient(at 0% 100%, hsl(157deg, 38%, 51%) 0px, transparent 65%), radial-gradient(at 100% 100%, hsl(289deg, 70%, 51%) 0px, transparent 65%);
+  animation: mesh 12s 3s infinite;
+  background-image: radial-gradient(at -40% -30%, hsl(289deg, 70%, 51%) 0px, transparent 65%), radial-gradient(at 0% 100%, hsl(217deg, 38%, 51%) 0px, transparent 65%), radial-gradient(at 200% 100%, hsl(157deg, 38%, 51%) 0px, transparent 65%);
 }
 .mwx-mesh__3 {
-  animation: mesh 12s 8s infinite;
+  animation: mesh 12s 6s infinite;
+  background-image: radial-gradient(at 0% 0%, hsla(14deg, 66%, 63%, 0.5) 0px, transparent 65%), radial-gradient(at 0% 130%, hsl(157deg, 38%, 51%) 0px, transparent 65%), radial-gradient(at 100% 130%, hsl(289deg, 70%, 51%) 0px, transparent 65%);
+}
+.mwx-mesh__4 {
+  animation: mesh 12s 9s infinite;
   background-image: radial-gradient(at 130% 0%, hsl(359deg, 70%, 51%) 0px, transparent 65%), radial-gradient(at 130% 100%, hsl(289deg, 70%, 51%) 0px, transparent 65%), radial-gradient(at 120% 67%, hsl(14deg, 66%, 63%) 0px, transparent 65%);
 }
 

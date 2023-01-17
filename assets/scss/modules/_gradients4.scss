@@ -1,0 +1,133 @@
+@keyframes waber {
+  50% {
+    opacity: .9;
+    transform:scale(1.2);
+  }
+  100% {
+    opacity: .25;
+    transform:scale(1);
+  }
+}
+.grad4 {
+  width: 100%;
+  height: 70vh;
+  background: rgb(181, 232, 242);
+  position: relative;
+  overflow:hidden;
+  %suns {
+    width: 100%;
+    height: 100%;
+    filter: blur(50px);
+    /*animation-iteration-count: infinite;*/
+    position: absolute;
+    /*opacity: .25;*/
+
+  }
+  &__1 {
+    top:-50%;
+    left:-50%;
+    animation: grad4-1 20s infinite, scale 5s 2.5s infinite;
+
+    background: radial-gradient(circle, rgba(255, 216, 0,1) 0%, rgba(181, 232, 242) 50%);
+    @extend %suns;
+  }
+  &__2 {
+    top:-50%;
+    left:50%;
+    animation: grad4-2 20s 5s infinite, scale 5s 7.5s infinite;
+    animation-delay: 2s;
+    background: radial-gradient(circle, rgba(249, 4, 249,1) 0%, rgba(181, 232, 242) 50%);
+    @extend %suns
+  }
+  &__3 {
+    top:50%;
+    left:-50%;
+    animation: grad4-3 20s 10s infinite, scale 5s 12.5s infinite;
+    background: radial-gradient(circle, rgba(21, 249, 4,1) 0%, rgba(181, 232, 242) 50%);
+    @extend %suns
+  }
+  &__4 {
+    top:50%;
+    left:50%;
+    animation: grad4-4 20s 15s infinite, scale 5s 25s infinite;
+    animation-delay: 6s;
+    background: radial-gradient(circle, rgba(249, 82, 4,1) 0%, rgba(181, 232, 242) 50%);
+    @extend %suns
+  }
+}
+
+@keyframes grad4-1 {
+  25% {
+    top:50%;
+  }
+
+  50% {
+    left:50%;
+  }
+  75% {
+    top:-50%;
+  }
+  100% {
+    left:-50%;
+  }
+}
+@keyframes grad4-2 {
+  25% {
+    left:-50%;
+  }
+
+  50% {
+    top:50%;
+  }
+  75% {
+    left:50%;
+  }
+  100% {
+    top:-50%;
+  }
+}
+@keyframes grad4-3 {
+  25% {
+    top:50%;
+    left:50%;
+  }
+  50% {
+    left:50%;
+    top:-50%;
+  }
+  75% {
+    top:-50%;
+    left:-50%;
+  }
+  100% {
+    left:-50%;
+    top:50%;
+  }
+}
+
+@keyframes grad4-4 {
+  25% {
+    top:-50%;
+  }
+
+  50% {
+    left:-50%;
+  }
+  75% {
+    top:50%;
+  }
+  100% {
+    left:50%;
+  }
+}
+
+@keyframes scale {
+  to{
+    opacity: 0;
+  }
+}
+@keyframes toTop {
+  to{
+    top:50%;
+  }
+}

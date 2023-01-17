@@ -1,134 +1,105 @@
-$bg: #000033;
-$shadow: #DBE4E0;
-%innerdiv {
-  position: absolute;
+@keyframes fly {
+  100% {
+    transform:rotate(1turn) translate(100px) rotate(-1turn);
+  }
 }
+
+@keyframes flyPlus {
+  100% {
+    transform:rotate(-1turn) translate(100px) rotate(1turn);
+  }
+}
+.blurry {
+  position: absolute;
+  filter: blur(100px);
+  opacity: 0.8;
+}
+
+$colour-1: #000033;
+$colour-2: #FFF;
+$colour-3: #DBE4E1;
+
 .grad {
   width: 100%;
   height: 70vh;
+  background: blue;
+  background: $colour-1;
   position: relative;
-  overflow: hidden;
-
-
-  &__bg-1 {
-    position: absolute;
-    width: 100%;
-    height:100%;
-    background: $bg;
-    /*animation: brightness 10s 0s linear infinite;*/
+  overflow:hidden;
+  &__1 {
+    border-radius: 100%;
+    width: 200%;
+    height: 120%;
+    background-color: blue;
+    left:-5%;
+    top:-50%;
+    z-index: 3;
+    animation: fly 12s linear infinite;
+    transform:rotate(0) translate(80px) rotate(0);
+    @extend .blurry
   }
-  &__trans-1 {
-    @extend %innerdiv;
-    background: $shadow;
-    width: 10%;
-    height: 90%;
-    left: 50%;
-    filter: blur(7vmax);
-    transform: skewX(20deg);
+  &__2 {
+    width: 120%;
+    height: 120%;
+    background-color: red;
+    bottom:-30%;
+    left:-40%;
+    @extend .blurry
   }
   &__3 {
-    /*position: absolute;
-    opacity: 0.75;
-    box-shadow: 0 0 20vmax 20vmax $shadow;
-    animation: colour-1 10s 0s linear infinite;*/
-  }
-
-  /*&__2 {
-    position: absolute;
-    opacity: 0.75;
-    box-shadow: 0 0 15vmax 15vmax $shadow;
-    animation: colour-2 15s 0s linear infinite;
-  }
-
-  &__1 {
-    position: absolute;
-    opacity: 0.75;
-    box-shadow: 0 0 10vmax 10vmax $shadow;
-    animation: colour-3 20s 0s linear infinite;
-  }*/
-
-}
-@function shadow($color) {
-  @return 0 0 45vmax 45vmax #{$color};
-}
-
-@keyframes brightness {
-  to {
-    filter: brightness(100%);
-  }
-}
-
-@keyframes hueRotateMWX {
-  to {
-    filter: hue-rotate(3.142rad);
-  }
-}
-
-@keyframes hueRotate {
-  to {
-    filter: hue-rotate(360deg);
-  }
-}
-
-@keyframes colour-1 {
-  0% {
-    top: 50%;
-    left: 100%;
-  }
-  25% {
-    top: 100%;
-  }
-  50% {
-    left: 0%;
-  }
-  75% {
-    top: 0%;
-  }
-  100% {
-    top: 50%;
-    left: 100%;
-  }
-}
-
-@keyframes colour-2 {
-  0% {
-    top: 50%;
-    left: 100%;
-  }
-  25% {
-    top: 100%;
-  }
-  50% {
-    left: 0%;
-  }
-  75% {
-    top: 0%;
-  }
-  100% {
-    top: 50vh;
-    left: 100%;
-  }
-}
-
-@keyframes colour-3 {
-  0% {
-    top: 100%;
-    left: 50%;
-  }
-  25% {
-    left: 100%;
-  }
-  50% {
-    top: 0%;
-  }
-  75% {
-    left: 0%;
-  }
-  100% {
-    top: 100%;
-    left: 50%;
+    border-radius: 100%;
+    width: 200%;
+    height: 200vh;
+    bottom:-20%;
+    left: 0;
+    background-color: lime;
+    animation: flyPlus 8s linear infinite;
+    transform:rotate(0) translate(100px) rotate(0);
+    @extend .blurry
   }
 }
 
 
 
+
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  position: relative;
+  overflow:hidden;
+  border-radius: 40px;
+}
+
+.base {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
+}
+
+.one {
+  border-radius: 100%;
+  width: 600px;
+  height: 600px;
+  background-color: #373372;
+  left:-50px;
+  top:-300px;
+  z-index: 3;
+}
+
+.two {
+  width: 500px;
+  height: 800px;
+  background-color: #7C336C;
+  bottom:-30px;
+  left:-80px;
+}
+
+.three {
+  /*border-radius: 100%;*/
+  /*width: 450px;
+  height: 450px;
+  bottom:-80px;
+  right:-100px;*/
+  background-color: #B3588A;
+}

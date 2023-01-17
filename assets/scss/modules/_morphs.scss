@@ -1,0 +1,91 @@
+.blurrymorph {
+  position: absolute;
+  filter: blur(15px);
+  opacity: 0.5;
+  animation: matrixMorph1 12s alternate linear infinite;
+}
+
+.morph {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background: #000033;
+  &__wrap {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    &--first {
+      /*display: none;*/
+
+      filter: blur(15px);
+      opacity: 0.25;
+      animation: matrixMorph1 12s alternate linear infinite;
+    }
+
+    &--second {
+      /*filter: blur(5px);*/
+      opacity: 0.15;
+      left: 0;
+      bordER: 20px dashed red;
+      transform-origin: left;
+      transform: rotate(0) matrix3d(
+                      1, 0, 0, 0,
+                      0, 1, 0, 0,
+                      0, 0, 1, 0,
+                      0, 0, 0, 1
+      );
+      /*animation: matrixMorph2 12s 3s alternate linear infinite;*/
+    }
+    div {
+
+      width: 100px;
+      height: 100px;
+      background: #FFF;
+      transform: translate(0, -20%) rotate(45deg);
+    }
+    div:nth-child(2) {
+      width: 130px;
+      height: 130px;
+      transform: translate(-15px, -20%) rotate(45deg);
+    }
+  }
+}
+
+@keyframes matrixMorph1 {
+  from {
+    transform:  rotate(-30deg) matrix3d(
+                    1,0,0,0,
+                    0,1,0,0,
+                    0,0,1,0,
+                    0,0,0,1
+    );
+
+  }
+  50% {
+    transform:  rotate(-40deg) matrix3d(
+                    .4,0,0,0,
+                    0,1,0,0,
+                    0,0,1,0,
+                    0,0,0,-1
+    );
+  }
+  to {
+    transform:  rotate(-30deg) matrix3d(
+                    1,0,0,0,
+                    0,1,0,0,
+                    0,0,1,0,
+                    0,0,0,1
+    )
+  }
+}
+
+@keyframes matrixMorph2 {
+  to {
+    transform:  rotate(-30deg) matrix3d(
+                    2,0,0,0,
+                    0,1,0,0,
+                    0,0,1,0,
+                    0,0,0,2
+    )
+  }
+}

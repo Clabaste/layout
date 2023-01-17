@@ -6698,121 +6698,160 @@ li {
     display: none !important;
   }
 }
-.grad__trans-1 {
+@keyframes fly {
+  100% {
+    transform: rotate(1turn) translate(100px) rotate(-1turn);
+  }
+}
+@keyframes flyPlus {
+  100% {
+    transform: rotate(-1turn) translate(100px) rotate(1turn);
+  }
+}
+.blurry, .grad__3, .grad__2, .grad__1 {
   position: absolute;
+  filter: blur(100px);
+  opacity: 0.8;
 }
 
 .grad {
   width: 100%;
   height: 70vh;
+  background: blue;
+  background: #000033;
   position: relative;
   overflow: hidden;
-  /*&__2 {
-    position: absolute;
-    opacity: 0.75;
-    box-shadow: 0 0 15vmax 15vmax $shadow;
-    animation: colour-2 15s 0s linear infinite;
-  }
-
-  &__1 {
-    position: absolute;
-    opacity: 0.75;
-    box-shadow: 0 0 10vmax 10vmax $shadow;
-    animation: colour-3 20s 0s linear infinite;
-  }*/
 }
-.grad__bg-1 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #000033;
-  /*animation: brightness 10s 0s linear infinite;*/
+.grad__1 {
+  border-radius: 100%;
+  width: 200%;
+  height: 120%;
+  background-color: blue;
+  left: -5%;
+  top: -50%;
+  z-index: 3;
+  animation: fly 12s linear infinite;
+  transform: rotate(0) translate(80px) rotate(0);
 }
-.grad__trans-1 {
-  background: #DBE4E0;
-  width: 10%;
-  height: 90%;
-  left: 50%;
-  filter: blur(7vmax);
-  transform: skewX(20deg);
+.grad__2 {
+  width: 120%;
+  height: 120%;
+  background-color: red;
+  bottom: -30%;
+  left: -40%;
 }
 .grad__3 {
-  /*position: absolute;
-  opacity: 0.75;
-  box-shadow: 0 0 20vmax 20vmax $shadow;
-  animation: colour-1 10s 0s linear infinite;*/
+  border-radius: 100%;
+  width: 200%;
+  height: 200vh;
+  bottom: -20%;
+  left: 0;
+  background-color: lime;
+  animation: flyPlus 8s linear infinite;
+  transform: rotate(0) translate(100px) rotate(0);
 }
 
-@keyframes brightness {
-  to {
-    filter: brightness(100%);
-  }
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
 }
-@keyframes hueRotateMWX {
-  to {
-    filter: hue-rotate(3.142rad);
-  }
+
+.base {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
 }
-@keyframes hueRotate {
-  to {
-    filter: hue-rotate(360deg);
-  }
+
+.one {
+  border-radius: 100%;
+  width: 600px;
+  height: 600px;
+  background-color: #373372;
+  left: -50px;
+  top: -300px;
+  z-index: 3;
 }
-@keyframes colour-1 {
-  0% {
-    top: 50%;
-    left: 100%;
-  }
-  25% {
-    top: 100%;
+
+.two {
+  width: 500px;
+  height: 800px;
+  background-color: #7C336C;
+  bottom: -30px;
+  left: -80px;
+}
+
+.three {
+  /*border-radius: 100%;*/
+  /*width: 450px;
+  height: 450px;
+  bottom:-80px;
+  right:-100px;*/
+  background-color: #B3588A;
+}
+
+.blurrymorph {
+  position: absolute;
+  filter: blur(15px);
+  opacity: 0.5;
+  animation: matrixMorph1 12s alternate linear infinite;
+}
+
+.morph {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background: #000033;
+}
+.morph__wrap {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+}
+.morph__wrap--first {
+  /*display: none;*/
+  filter: blur(15px);
+  opacity: 0.25;
+  animation: matrixMorph1 12s alternate linear infinite;
+}
+.morph__wrap--second {
+  /*filter: blur(5px);*/
+  opacity: 0.15;
+  left: 0;
+  bordER: 20px dashed red;
+  transform-origin: left;
+  transform: rotate(0) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  /*animation: matrixMorph2 12s 3s alternate linear infinite;*/
+}
+.morph__wrap div {
+  width: 100px;
+  height: 100px;
+  background: #FFF;
+  transform: translate(0, -20%) rotate(45deg);
+}
+.morph__wrap div:nth-child(2) {
+  width: 130px;
+  height: 130px;
+  transform: translate(-15px, -20%) rotate(45deg);
+}
+
+@keyframes matrixMorph1 {
+  from {
+    transform: rotate(-30deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
   50% {
-    left: 0%;
+    transform: rotate(-40deg) matrix3d(0.4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1);
   }
-  75% {
-    top: 0%;
-  }
-  100% {
-    top: 50%;
-    left: 100%;
+  to {
+    transform: rotate(-30deg) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
-@keyframes colour-2 {
-  0% {
-    top: 50%;
-    left: 100%;
-  }
-  25% {
-    top: 100%;
-  }
-  50% {
-    left: 0%;
-  }
-  75% {
-    top: 0%;
-  }
-  100% {
-    top: 50vh;
-    left: 100%;
-  }
-}
-@keyframes colour-3 {
-  0% {
-    top: 100%;
-    left: 50%;
-  }
-  25% {
-    left: 100%;
-  }
-  50% {
-    top: 0%;
-  }
-  75% {
-    left: 0%;
-  }
-  100% {
-    top: 100%;
-    left: 50%;
+@keyframes matrixMorph2 {
+  to {
+    transform: rotate(-30deg) matrix3d(2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2);
   }
 }
 .label {
